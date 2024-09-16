@@ -1,0 +1,76 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jayca\\My project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\controllers\\playercontroller2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\playercontroller2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\controllers\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 345,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerController2.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\PlayerController2.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\PlayerController2.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\PlayerController2.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\PlayerController2.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAwwHkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T21:08:01.049Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 319,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\CameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\CameraController.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\CameraController.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\CameraController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T03:01:54.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\PlayerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T19:09:54.835Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

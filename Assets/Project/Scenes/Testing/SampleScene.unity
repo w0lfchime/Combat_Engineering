@@ -704,15 +704,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ea8506ed13ce641ae9b9655ac82d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1704767907}
+  playerObject: {fileID: 1704767903}
   offset: {x: 0, y: 10, z: -5}
-  followSpeed: 3.19
+  followSpeed: 2
   rotationSpeed: 100
-  zoomSpeed: 5
+  zoomSpeed: 10
   minZoom: 10
   maxZoom: 60
-  cameraSpeed: 10
-  cameraLimit: 15.22
+  cameraSpeed: 5
+  cameraLimit: 5
   allowPlayerControl: 1
   toggleBirdseye: 98
 --- !u!1 &999121612
@@ -947,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c07324091b2504d4a96f85b8b94e2675, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.08
+      value: -19.78
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c07324091b2504d4a96f85b8b94e2675, type: 3}
       propertyPath: m_LocalPosition.y
@@ -955,7 +955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c07324091b2504d4a96f85b8b94e2675, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.24
+      value: 25.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c07324091b2504d4a96f85b8b94e2675, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1072,7 +1072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b7ea252bb148c94fb5d65aca5de219e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.41
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b7ea252bb148c94fb5d65aca5de219e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1398,6 +1398,7 @@ MonoBehaviour:
   jumpKey: 32
   sprintKey: 304
   sneakKey: 306
+  aimKey: 324
 --- !u!54 &1704767904
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1448,11 +1449,6 @@ CapsuleCollider:
   m_Height: 2.39
   m_Direction: 1
   m_Center: {x: 0, y: 1.19, z: 0}
---- !u!4 &1704767907 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b7ea252bb148c94fb5d65aca5de219e, type: 3}
-  m_PrefabInstance: {fileID: 1248909792}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1731247289
 PrefabInstance:
   m_ObjectHideFlags: 0

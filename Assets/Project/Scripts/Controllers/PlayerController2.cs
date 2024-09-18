@@ -4,10 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IPlayer
 {
-
-
 	[Header("Movement Settings")]
 	public float baseMoveForce = 3f;
 	public float beginReductionSpeed = 14.0f;
@@ -28,8 +26,10 @@ public class PlayerMovement : MonoBehaviour
 	private float playerCurrentSpeed;
 	private float playerCurrentSpeedY;
 	public float distanceToGround;
+
 	private bool isSneaking;
 	private bool isSprinting;
+	private bool isAiming;
 
 	[Header("Physics Settings")]
 	public float baseFlatDrag = 100;
@@ -60,8 +60,18 @@ public class PlayerMovement : MonoBehaviour
 	public KeyCode jumpKey = KeyCode.Space;
 	public KeyCode sprintKey = KeyCode.LeftShift;
 	public KeyCode sneakKey = KeyCode.LeftControl;
+	public KeyCode aimKey = KeyCode.Mouse1;
 
+	//IPlayer:
+	public bool GetAiming()
+	{
+		return isAiming;
+	}
 
+	public Vector3 GetPosition()
+	{
+		return transform.position;
+	}
 
 	void Start()
 	{
@@ -91,8 +101,19 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+	private float upperBodyAnimatorWeight;
+
     void AnimatorUpdates()
 	{
+		if (isAiming)
+		{
+			animator.SetLayerWeight(0, 1f);
+		}
+		else
+		{
+			animator.SetLayerWeight(0, 0f);
+		}
+
         float targetAnimSpeedFactor = Mathf.Clamp01(playerCurrentSpeed / approxMaxSpeed);
 
 
@@ -102,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
 		animator.SetFloat("AnimSpeedFactor", targetAnimSpeedFactor);
 
 		animator.SetBool("Grounded", isGrounded);
+
+
     }
 
 	void HandleInputs()
@@ -117,6 +140,13 @@ public class PlayerMovement : MonoBehaviour
 		{
 			isSneaking = false;
 			isSprinting = true;
+		}
+
+		isAiming = false;
+		if (Input.GetKey(aimKey))
+		{
+			isSneaking = true;
+			isAiming = true;
 		}
 
 

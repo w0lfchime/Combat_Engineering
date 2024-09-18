@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-	public Transform playerTransform;   
+	public MonoBehaviour playerObject;
+	public IPlayer player;   
 	public Vector3 offset = new Vector3(0f, 10f, -10f); 
 	public float followSpeed = 5f;     
 	public float rotationSpeed = 100f;  
@@ -25,36 +26,28 @@ public class CameraController : MonoBehaviour
 
     void Start()
 	{
+		player = playerObject as IPlayer;
 		currentZoom = offset.magnitude;
-        targetPosition = playerTransform.position + offset;
+        targetPosition = player.GetPosition() + offset;
 		isAiming = false;
     }
 
 	void LateUpdate()
 	{
-		HandleAimingInput();
+		HandleAiming();
 		HandleZoom();
 		HandleCameraMovement();
 	}
 
-	void HandleAimingInput()
+	void HandleAiming()
 	{
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    isAiming = true;
-        //}
-        //else if (Input.GetKeyUp(KeyCode.Space))
-        //{
-        //    isAiming = false;
-        //}
-
-        if (isAiming)
+        if (player.GetAiming())
         {
-            SetAimingTarget(playerTransform);
+            SetAimingTarget(player.GetPosition());
         }
         else
         {
-            SetTrackingTarget(playerTransform);
+            SetTrackingTarget(player.GetPosition());
         }
     }
 
@@ -69,12 +62,12 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, 1f / cameraSpeed);
     }
 
-	void SetTrackingTarget(Transform trackThis)
+	void SetTrackingTarget(Vector3 trackThis)
 	{
-		targetPosition = trackThis.position + offset;
+		targetPosition = trackThis + offset;
 	}
 
-	void SetAimingTarget(Transform playerPivotTransform)
+	void SetAimingTarget(Vector3 playerPivotTransform)
 	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
@@ -82,14 +75,14 @@ public class CameraController : MonoBehaviour
 		{
 			Vector3 pointToLook = ray.GetPoint(rayLength);
 
-			Vector3 direction = pointToLook - playerPivotTransform.position;
+			Vector3 direction = pointToLook - playerPivotTransform;
 
 			if (direction.magnitude > cameraLimit)
 			{
 				direction = direction.normalized * cameraLimit;
 			}
 
-			targetPosition = playerPivotTransform.position + offset + direction;
+			targetPosition = playerPivotTransform + offset + direction;
 		}
 	}
 
@@ -107,7 +100,7 @@ public class CameraController : MonoBehaviour
 	public void ResetCamera()
 	{
 		currentZoom = offset.magnitude;
-		transform.position = playerTransform.position - offset.normalized * currentZoom;
+		transform.position = player.GetPosition() - offset.normalized * currentZoom;
 		//transform.LookAt(playerTransform.position);
 	}
 }

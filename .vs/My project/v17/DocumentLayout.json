@@ -7,12 +7,24 @@
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\playercontroller2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\controllers\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\controllers\\bulletscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\bulletscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\controllers\\barrelflash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\barrelflash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\controllers\\randomcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\randomcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\controllers\\newbehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\newbehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\controllers\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +38,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 345,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "BulletScript.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\BulletScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\BulletScript.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\BulletScript.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\BulletScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T02:06:09.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RandomColor.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\RandomColor.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\RandomColor.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\RandomColor.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\RandomColor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T20:29:34.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "NewBehaviourScript.cs",
               "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\NewBehaviourScript.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\NewBehaviourScript.cs",
@@ -48,7 +84,7 @@
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\PlayerController2.cs",
               "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\PlayerController2.cs",
               "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\PlayerController2.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAIwGcAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAmwKEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T21:08:01.049Z",
               "EditorCaption": ""
@@ -57,24 +93,23 @@
         },
         {
           "DockedWidth": 319,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "CameraController.cs",
               "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\CameraController.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\CameraController.cs",
               "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\CameraController.cs",
               "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\CameraController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAYwBwAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:01:54.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-27T03:01:54.765Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\PlayerController.cs",
@@ -83,6 +118,19 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T19:09:54.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BarrelFlash.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\BarrelFlash.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\BarrelFlash.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\BarrelFlash.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\BarrelFlash.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T22:44:52.279Z",
+              "EditorCaption": ""
             }
           ]
         }

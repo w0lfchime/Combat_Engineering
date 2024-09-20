@@ -67,6 +67,8 @@
     <Compile Include="Assets\Project\Scripts\Controllers\PlayerController.cs" />
     <Compile Include="Assets\Project\Scenes\World\ChunkManager.cs" />
     <Compile Include="Assets\Project\Scripts\Controllers\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\BulletScript.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\BarrelFlash.cs" />
     <Compile Include="Assets\Project\Scripts\Controllers\PlayerController2.cs" />
   </ItemGroup>
   <ItemGroup>

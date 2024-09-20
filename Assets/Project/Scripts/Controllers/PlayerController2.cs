@@ -8,9 +8,10 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 {
 	[Header("Movement Settings")]
 	public float baseMoveForce = 3f;
-	public float beginReductionSpeed = 14.0f;
-	public float approxMaxSpeed = 15f;
-	public float jumpForce = 5f;          
+	public float beginReductionSpeed = 12.0f;
+	public float approxMaxSpeed = 12f;
+	public float equippedRifleSpeedModifer = -5.0f;
+	public float jumpForce = 10f;          
 	public float sprintForceFactor = 2f;
 	public float groundCheckingDistance = 4f;
 
@@ -18,6 +19,8 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 	public float targetMoveForce;
 	public float moveForce;
 	private Vector3 inputDirection;
+	[SerializeField]
+	private Vector3 lookDirection;
 	[SerializeField]
 	private bool isGrounded;
 	[SerializeField]
@@ -27,17 +30,20 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 	private float playerCurrentSpeedY;
 	public float distanceToGround;
 
+	//Character States
 	private bool isSneaking;
 	private bool isSprinting;
 	private bool isAiming;
+	private bool isFiring;
+	private bool canFire;
 
 	[Header("Physics Settings")]
-	public float baseFlatDrag = 100;
-	public float groundDrag = 5f; 
+	public float baseFlatDrag = 10f;
+	public float groundDrag = 10f; 
 	public float airDrag = 1f; 
-	public float gravityMultiplier = 2f;
+	public float gravityMultiplier = 0.3f;
     public float groundedDistance = 0.1f;
-	public float bonusGravity = 5.0f;
+	public float bonusGravity = 2.0f;
 
     [Header("Physics Variables")]
 	private Rigidbody rb;
@@ -45,25 +51,44 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 	private Vector3 capsuleBottom;
 
 	[Header("Animation Settings")]
-	public float rotationSpeed = 5.0f;
+	public float rotationSpeed = 10.0f;
 
 	[Header("Animation Variables")]
 	public Animator animator;
+	public Transform upperBodyBone;
 
+	[Header("Item")]
+	public GameObject equippedItem;
+    public Transform itemTransform;
+	private Vector3 rifleDirection;
+	private int equipState;
+	//1 = nothing
+	//2 = melee
+	//3 = rifle
+	public float fireDelay = 0.1f;
+	public GunFire gunFiringEffect;
+	public GameObject bulletPrefab;
+	public float bulletSpeed = 100f;
+	public float bulletLifeTime = 2f;
+	
 
-
-
-
-
+    [Header("Camera")]
+    public Camera mainCamera;
 
 	[Header("Controls")]
 	public KeyCode jumpKey = KeyCode.Space;
 	public KeyCode sprintKey = KeyCode.LeftShift;
 	public KeyCode sneakKey = KeyCode.LeftControl;
-	public KeyCode aimKey = KeyCode.Mouse1;
 
-	//IPlayer:
-	public bool GetAiming()
+	public KeyCode aimKey = KeyCode.Mouse1;
+	public KeyCode fireKey = KeyCode.Mouse0;
+
+	public KeyCode equipSlot1 = KeyCode.Alpha1;
+	public KeyCode equipSlot2 = KeyCode.Alpha2;
+    public KeyCode equipSlot3 = KeyCode.Alpha3;
+
+    //IPlayer:
+    public bool GetAiming()
 	{
 		return isAiming;
 	}
@@ -81,38 +106,90 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 		animator = GetComponent<Animator>();
 
 		moveForce = baseMoveForce;
-
-		isGrounded = false;
-
+		isFiring = false;
 		//HACK:
 		playerCurrentSpeed = 0f;
 		isSneaking = false;
+		isGrounded = false;
+		canFire = true;
+		
 	}
+
+
 
 	void Update()
 	{
 		HandleInputs();
+		ManageItem();
 		MovePlayer();
 		HandleRotation();
 		CheckGrounded();
 		HandleJump();
+		BasicInventory();
 		AnimatorUpdates();
-
     }
 
+	void ManageItem()
+	{
+		equippedItem.SetActive(isAiming);
 
-	private float upperBodyAnimatorWeight;
+		if (isFiring && canFire) 
+		{
+			StartCoroutine(Fire());
+		}
 
+	}
+
+	void FireBullet()
+	{
+		float randomizedBulletSpeed = bulletSpeed + Random.Range(-12f, 12f);
+
+		Quaternion bulletRotation = equippedItem.transform.rotation;
+
+
+
+		GameObject bullet = Instantiate(bulletPrefab, equippedItem.transform.position, bulletRotation);
+
+		Rigidbody brb = bullet.GetComponent<Rigidbody>();
+
+		Vector3 bulletForward = bulletRotation * Vector3.forward;
+
+		if (rb != null)
+		{
+			brb.velocity = -bulletForward * randomizedBulletSpeed;
+		}
+		Destroy(bullet, bulletLifeTime);
+	}
+
+	IEnumerator Fire()
+	{
+		canFire = false;
+
+        if (gunFiringEffect != null)
+        {
+            gunFiringEffect.Fire();  // Trigger the firing effects in the gun script
+        }
+		FireBullet();
+
+        yield return new WaitForSeconds(fireDelay);
+
+		canFire = true;
+	}
+
+    private float upperBodyAnimatorWeight = 0f;
+	private float maxAimingWalkSpeed = 4.5f;
     void AnimatorUpdates()
 	{
-		if (isAiming)
-		{
-			animator.SetLayerWeight(0, 1f);
-		}
-		else
-		{
-			animator.SetLayerWeight(0, 0f);
-		}
+		float upperBodyAnimatorTargetWeight = 0f;
+
+		//if (isAiming)
+		//{
+		//	upperBodyAnimatorTargetWeight = 1f;
+		//}
+
+		upperBodyAnimatorWeight = Mathf.Lerp(upperBodyAnimatorWeight, upperBodyAnimatorTargetWeight, Time.deltaTime * 3.0f);
+
+		animator.SetLayerWeight(1, upperBodyAnimatorWeight);
 
         float targetAnimSpeedFactor = Mathf.Clamp01(playerCurrentSpeed / approxMaxSpeed);
 
@@ -123,17 +200,26 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 		animator.SetFloat("AnimSpeedFactor", targetAnimSpeedFactor);
 
 		animator.SetBool("Grounded", isGrounded);
+		animator.SetBool("Aiming", isAiming);
 
 
+		if (isAiming)
+		{
+			float angle = Vector3.SignedAngle(rb.velocity.normalized, lookDirection, Vector3.up);
+
+			Vector2 blendTreeInput = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+
+			blendTreeInput.Normalize();
+
+			blendTreeInput = (blendTreeInput * playerCurrentSpeed) / maxAimingWalkSpeed;
+
+			animator.SetFloat("8W_WalkX", blendTreeInput.x);
+			animator.SetFloat("8W_WalkY", blendTreeInput.y);
+		}
     }
 
 	void HandleInputs()
 	{
-		if (Input.GetKeyDown(sneakKey))
-		{
-			isSneaking = !isSneaking;
-		}
-
 		targetMoveForce = baseMoveForce;
 		isSprinting = false;
         if (Input.GetKey(sprintKey))
@@ -143,17 +229,76 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 		}
 
 		isAiming = false;
+		if (Input.GetKeyDown(aimKey))
+		{
+			gunFiringEffect.OnAim();
+		}
 		if (Input.GetKey(aimKey))
 		{
 			isSneaking = true;
 			isAiming = true;
 		}
+		isFiring = false;
+		if (isAiming && Input.GetKey(fireKey))
+		{
+			isFiring = true;
+		}
+		if (Input.GetKeyUp(aimKey))
+		{
+			isSneaking = false;
+		}
+
+        if (Input.GetKeyDown(sneakKey))
+        {
+            isSneaking = !isSneaking;
+        }
+
+
+		//Equip Slots
+		if (Input.GetKeyDown(equipSlot1))
+		{
+			//Nothing
+			equipState = 1;
+		}
+        if (Input.GetKeyDown(equipSlot2))
+        {
+			//Melee
+			//TODO: Implement
+        }
+        if (Input.GetKeyDown(equipSlot3))
+        {
+			//Rifle
+			equipState = 3;
+        }
 
 
 
     }
+
+	private void BasicInventory()
+	{
+
+	}
+
 	private void MovePlayer()
 	{
+		//float beginReductionSpeed_local = beginReductionSpeed;
+
+		//switch(equipState)
+		//{
+		//	case 1:
+		//		//nothing
+		//		break;
+		//	case 2:
+		//		//nothing
+		//		break;
+
+		//	case 3:
+
+		//		break;
+
+		//}
+
 		float moveX = Input.GetAxisRaw("Horizontal");
 		float moveZ = Input.GetAxisRaw("Vertical");
 
@@ -174,7 +319,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 		}
 		if (isSneaking)
 		{
-			targetMoveForce = baseMoveForce / 2;
+			targetMoveForce = baseMoveForce / 1.8f;
 		}
 
 
@@ -216,21 +361,39 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 		playerCurrentSpeed = speedOnZXPlane.magnitude;
 	}
 
-	void HandleRotation()
-	{
-		if (playerCurrentSpeed > 0.1f)
-		{
-			Vector3 directionToPointIn = rb.velocity.normalized * 3 + inputDirection;
 
-			//TODO: INVESTIGATE DYNAMIC AIRBONE ROTATION BY REMOVING
-			directionToPointIn.y = 0;
-			
-			Quaternion targetRotation = Quaternion.LookRotation(directionToPointIn);
+    //Use rb.rotation to for projectiles, hitboxes, etc
+    void HandleRotation()
+    {
+        if (isAiming)
+        {
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            Plane groundPlane = new Plane(Vector3.up, transform.position);
+
+            if (groundPlane.Raycast(ray, out float distance))
+            {
+                Vector3 mouseWorldPosition = ray.GetPoint(distance);
+                Vector3 playerPosition = transform.position;
+
+                // Calculate the direction from the player to the mouse world position
+                lookDirection = (mouseWorldPosition - playerPosition);
+            }
+        }
+        else if (playerCurrentSpeed > 0.1f)
+        {
+            lookDirection = rb.velocity.normalized * 3 + inputDirection;
+        }
+
+        lookDirection.y = 0;  // Keep the direction on the horizontal plane
+		lookDirection.Normalize();
+		if (lookDirection != Vector3.zero)
+		{
+			Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+
 			Quaternion smoothedRotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 			rb.MoveRotation(smoothedRotation);
 		}
-	}
-
+    }
 
 
     private float groundedSwitchCooldown = 0.2f; 

@@ -60,16 +60,23 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.43f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Project\Scripts\Controllers\CameraController.cs" />
-    <Compile Include="Assets\Project\Scripts\Controllers\RandomColor.cs" />
-    <Compile Include="Assets\Project\Scripts\Controllers\SunController.cs" />
-    <Compile Include="Assets\Project\Scripts\World\ChunkManager.cs" />
-    <Compile Include="Assets\Project\Scripts\Controllers\PlayerController.cs" />
-    <Compile Include="Assets\Project\Scenes\World\ChunkManager.cs" />
-    <Compile Include="Assets\Project\Scripts\Controllers\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Project\Scripts\Controllers\BulletScript.cs" />
-    <Compile Include="Assets\Project\Scripts\Controllers\BarrelFlash.cs" />
-    <Compile Include="Assets\Project\Scripts\Controllers\PlayerController2.cs" />
+    <Compile Include="Assets\Project\Scripts\Player\PlayerAnimation.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\Misc\CameraController.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\Misc\BulletScript.cs" />
+    <Compile Include="Assets\Project\Scripts\World Manager.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\Misc\RandomColor.cs" />
+    <Compile Include="Assets\Project\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\Misc\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Project\Scripts\TitleScreen.cs" />
+    <Compile Include="Assets\Project\Scripts\UI_Manager.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\Misc\PlayerController2_old.cs" />
+    <Compile Include="Assets\Project\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\Misc\BarrelFlash.cs" />
+    <Compile Include="Assets\Project\Scripts\LoadingScreen.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\Misc\SunController.cs" />
+    <Compile Include="Assets\Project\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Controllers\Misc\PlayerController_old.cs" />
+    <Compile Include="Assets\Project\Scripts\Player\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

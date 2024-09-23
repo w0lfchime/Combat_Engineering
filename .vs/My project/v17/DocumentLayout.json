@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\jayca\\My project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\loadingscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\loadingscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\world\\testworldgen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\world\\testworldgen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\titlescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\titlescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\ui_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\ui_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\world manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\world manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\world\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\world\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,108 +17,33 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 579,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 516,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Player\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Player\\Player.cs",
-              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Player\\Player.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\Player\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Title": "Chunk.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\Chunk.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\World\\Chunk.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\Chunk.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\World\\Chunk.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T21:48:29.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-23T03:01:53.985Z"
             },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAACoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T20:35:54.854Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 431,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "World Manager.cs",
-              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\World Manager.cs",
-              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World Manager.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\World Manager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T20:37:04.867Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "InputManager.cs",
-              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\InputManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\InputManager.cs",
-              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\InputManager.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\InputManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T20:48:23.264Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UI_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\UI_Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\UI_Manager.cs",
-              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\UI_Manager.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\UI_Manager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T20:36:31.574Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 610,
-          "SelectedChildIndex": 0,
-          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoadingScreen.cs",
-              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\LoadingScreen.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\LoadingScreen.cs",
-              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\LoadingScreen.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\LoadingScreen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Title": "TestWorldGen.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\TestWorldGen.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\World\\TestWorldGen.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\TestWorldGen.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\World\\TestWorldGen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T21:44:39.698Z",
+              "WhenOpened": "2024-09-23T00:42:50.678Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TitleScreen.cs",
-              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\TitleScreen.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\TitleScreen.cs",
-              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\TitleScreen.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\TitleScreen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T21:44:24.293Z"
             }
           ]
         }

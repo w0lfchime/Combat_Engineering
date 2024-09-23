@@ -362,13 +362,18 @@
 "Assets/Project/Scripts/Controllers/Misc/SunController.cs"
 "Assets/Project/Scripts/GameManager.cs"
 "Assets/Project/Scripts/InputManager.cs"
-"Assets/Project/Scripts/LoadingScreen.cs"
+"Assets/Project/Scripts/Loading Screen/LoadingScreen.cs"
+"Assets/Project/Scripts/Loading Screen/RotatingLogo.cs"
 "Assets/Project/Scripts/Player/Player.cs"
 "Assets/Project/Scripts/Player/PlayerAnimation.cs"
 "Assets/Project/Scripts/Player/PlayerMovement.cs"
-"Assets/Project/Scripts/TitleScreen.cs"
+"Assets/Project/Scripts/Title Screen/BackgroundPan.cs"
+"Assets/Project/Scripts/Title Screen/TextButtonColorChange.cs"
+"Assets/Project/Scripts/Title Screen/TitleScreen.cs"
 "Assets/Project/Scripts/UI_Manager.cs"
 "Assets/Project/Scripts/World Manager.cs"
+"Assets/Project/Scripts/World/Chunk.cs"
+"Assets/Project/Scripts/World/TestWorldGen.cs"
 -langversion:9.0
 /deterministic
 /optimize+

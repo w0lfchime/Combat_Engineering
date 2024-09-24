@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Chunk : MonoBehaviour
 {
-    public float size;
+    public GameObject surface;
+
     void Start()
     {
         

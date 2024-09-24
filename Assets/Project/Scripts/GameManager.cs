@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager2 : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager2 Instance { get; private set; }
 
 
     public InputManager inputManager;

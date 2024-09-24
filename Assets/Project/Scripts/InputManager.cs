@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(gameMenuPause))
         {
-            GameManager.Instance.QuitGame();
+            GameManager2.Instance.QuitGame();
         }
     }
 }

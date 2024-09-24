@@ -325,6 +325,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"Library/PackageCache/com.unity.testtools.codecoverage@1.2.6/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
@@ -364,6 +365,8 @@
 "Assets/Project/Scripts/InputManager.cs"
 "Assets/Project/Scripts/Loading Screen/LoadingScreen.cs"
 "Assets/Project/Scripts/Loading Screen/RotatingLogo.cs"
+"Assets/Project/Scripts/Managers/GameManager.cs"
+"Assets/Project/Scripts/Managers/InventoryManager.cs"
 "Assets/Project/Scripts/Player/Player.cs"
 "Assets/Project/Scripts/Player/PlayerAnimation.cs"
 "Assets/Project/Scripts/Player/PlayerMovement.cs"
@@ -373,7 +376,7 @@
 "Assets/Project/Scripts/UI_Manager.cs"
 "Assets/Project/Scripts/World Manager.cs"
 "Assets/Project/Scripts/World/Chunk.cs"
-"Assets/Project/Scripts/World/TestWorldGen.cs"
+"Assets/Project/Scripts/World/ChunkManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

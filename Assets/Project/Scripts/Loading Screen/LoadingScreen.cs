@@ -14,6 +14,6 @@ public class LoadingScreen : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         // Load the Title screen
-        GameManager.Instance.LoadScene("TitleScreen");
+        GameManager2.Instance.LoadScene("TitleScreen");
     }
 }

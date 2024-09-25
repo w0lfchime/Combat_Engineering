@@ -460,8 +460,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 836253707}
-  chunkSize: {x: 30, y: 30}
-  viewDistance: 2
+  chunkSize: {x: 10, y: 10}
+  viewDistance: 5
+  chunk_count: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,21 +13,31 @@ public class ChunkManager : MonoBehaviour
     private Dictionary<Vector2Int, Chunk> loadedChunks;
     private Queue<Chunk> chunkLoadQueue;
 
+    [SerializeField] private int chunk_count;
+
     void Start()
     {
+        chunk_count = 0;
         loadedChunks = new Dictionary<Vector2Int, Chunk>();
         chunkLoadQueue = new Queue<Chunk>();
 
-        // Initially load chunks around the player
-        LoadChunksAroundPlayer();
+        // Start the coroutine to load chunks around the player every second
+        StartCoroutine(LoadChunksCo());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator LoadChunksCo()
     {
-        // Check if we need to load/unload chunks based on player movement
-        LoadChunksAroundPlayer();
+        // Loop to continuously check and load/unload chunks every second
+        while (true)
+        {
+            // Load chunks based on player movement
+            LoadChunksAroundPlayer();
+
+            // Wait for 1 second before running the next iteration
+            yield return new WaitForSeconds(1.0f);
+        }
     }
+
 
     // Function to load/unload chunks around the player
     private void LoadChunksAroundPlayer()
@@ -67,8 +78,12 @@ public class ChunkManager : MonoBehaviour
     // Helper to get chunk coordinates from a world position
     private Vector2Int GetChunkCoordsFromPosition(Vector3 position)
     {
-        return new Vector2Int(Mathf.FloorToInt(position.x / chunkSize.x), Mathf.FloorToInt(position.z / chunkSize.y));
+        // Ensure the chunk coordinates are properly calculated by using the correct axis
+        int chunkX = Mathf.RoundToInt(position.x / chunkSize.x);
+        int chunkZ = Mathf.RoundToInt(position.z / chunkSize.y); // Make sure you intend to use 'z' for a 3D world
+        return new Vector2Int(chunkX, chunkZ);
     }
+
 
     // Function to load a chunk
     private void LoadChunk(Vector2Int chunkCoord)
@@ -76,8 +91,9 @@ public class ChunkManager : MonoBehaviour
         if (!loadedChunks.ContainsKey(chunkCoord))
         {
             // Create the chunk and set its parent (optionally a container for all chunks)
-            print("creating new chunk");
-            Chunk newChunk = new Chunk(chunkCoord, chunkSize, transform);
+            chunk_count++;
+            print("Creating new chunk with ID: " + chunk_count);
+            Chunk newChunk = new Chunk(chunkCoord, chunkSize, transform, chunk_count);
             loadedChunks.Add(chunkCoord, newChunk);
         }
 

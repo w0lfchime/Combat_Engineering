@@ -4,121 +4,163 @@ using UnityEngine;
 
 public class ChunkManager : MonoBehaviour
 {
-    public Transform playerTransform;
+	public Transform playerTransform;
+	[SerializeField] private Vector2Int playerChunkPos;
 
-    public Vector2Int chunkSize;
+	public int chunk_size;
+	private Vector2Int chunkSize;
+	public int viewDistance = 2;
 
-    public int viewDistance = 2;
-
-    private Dictionary<Vector2Int, Chunk> loadedChunks;
-    private Queue<Chunk> chunkLoadQueue;
-
-    [SerializeField] private int chunk_count;
-
-    void Start()
-    {
-        chunk_count = 0;
-        loadedChunks = new Dictionary<Vector2Int, Chunk>();
-        chunkLoadQueue = new Queue<Chunk>();
-
-        // Start the coroutine to load chunks around the player every second
-        StartCoroutine(LoadChunksCo());
-    }
-
-    IEnumerator LoadChunksCo()
-    {
-        // Loop to continuously check and load/unload chunks every second
-        while (true)
-        {
-            // Load chunks based on player movement
-            LoadChunksAroundPlayer();
-
-            // Wait for 1 second before running the next iteration
-            yield return new WaitForSeconds(1.0f);
-        }
-    }
+	private Dictionary<Vector2Int, Chunk> chunks;
+	private HashSet<Vector2Int> loadedChunks;
+	private Queue<Vector2Int> chunkLoadQueue;
 
 
-    // Function to load/unload chunks around the player
-    private void LoadChunksAroundPlayer()
-    {
-        // Get player's current chunk position
-        Vector2Int playerChunkPos = GetChunkCoordsFromPosition(playerTransform.position);
+	[SerializeField] private int chunk_count;
+	[SerializeField] private int chunkLoadQueueSize;
 
-        // Iterate over the area around the player and load chunks within view distance
-        for (int x = -viewDistance; x <= viewDistance; x++)
-        {
-            for (int y = -viewDistance; y <= viewDistance; y++)
-            {
-                Vector2Int chunkCoord = new Vector2Int(playerChunkPos.x + x, playerChunkPos.y + y);
-                if (!loadedChunks.ContainsKey(chunkCoord))
-                {
-                    // Load chunk if not loaded
-                    LoadChunk(chunkCoord);
-                }
-            }
-        }
+	[Header("Chunk Loading")]
+	public float chunkProcessDelay = 0.2f;
+	public float chunkScanDelay = 1;
+	public int chunkLoadingBatchSize = 1;
 
-        // Unload chunks outside the view distance
-        List<Vector2Int> chunksToUnload = new List<Vector2Int>();
-        foreach (var loadedChunk in loadedChunks)
-        {
-            if (Vector2Int.Distance(loadedChunk.Key, playerChunkPos) > viewDistance)
-            {
-                chunksToUnload.Add(loadedChunk.Key);
-            }
-        }
+	void Start()
+	{
+		chunk_count = 0;
+		chunks = new Dictionary<Vector2Int, Chunk>();
+		loadedChunks = new HashSet<Vector2Int>();
+		chunkLoadQueue = new Queue<Vector2Int>();
+		chunkSize = new Vector2Int(chunk_size, chunk_size);
 
-        foreach (var chunkCoord in chunksToUnload)
-        {
-            UnloadChunk(chunkCoord);
-        }
-    }
+		StartCoroutine(ChunkManagementCoroutine());
+	}
 
-    // Helper to get chunk coordinates from a world position
-    private Vector2Int GetChunkCoordsFromPosition(Vector3 position)
-    {
-        // Ensure the chunk coordinates are properly calculated by using the correct axis
-        int chunkX = Mathf.RoundToInt(position.x / chunkSize.x);
-        int chunkZ = Mathf.RoundToInt(position.z / chunkSize.y); // Make sure you intend to use 'z' for a 3D world
-        return new Vector2Int(chunkX, chunkZ);
-    }
+	IEnumerator ChunkManagementCoroutine()
+	{
+		float chunkLoadTimer = 0f;
+		float chunkProcessTimer = 0f;
 
+		while (true)
+		{
+			// Update timers with delta time
+			chunkLoadTimer += Time.deltaTime;
+			chunkProcessTimer += Time.deltaTime;
 
-    // Function to load a chunk
-    private void LoadChunk(Vector2Int chunkCoord)
-    {
-        if (!loadedChunks.ContainsKey(chunkCoord))
-        {
-            // Create the chunk and set its parent (optionally a container for all chunks)
-            chunk_count++;
-            print("Creating new chunk with ID: " + chunk_count);
-            Chunk newChunk = new Chunk(chunkCoord, chunkSize, transform, chunk_count);
-            loadedChunks.Add(chunkCoord, newChunk);
-        }
+			// Process chunk loading every 'chunkScanDelay' seconds
+			if (chunkLoadTimer >= chunkScanDelay)
+			{
+				ScanChunks();
+				chunkLoadTimer = 0f;  // Reset timer
+			}
 
-        // Activate the chunk
-        loadedChunks[chunkCoord].ActivateChunk();
-    }
+			// Process one chunk from the queue every 'chunkProcessDelay' seconds
+			if (chunkProcessTimer >= chunkProcessDelay)
+			{
+				if (chunkLoadQueue.Count > 0)
+				{
+					for (int i = 0; i < chunkLoadingBatchSize; i++)
+					{
+						ProcessChunkLoadQueue();
+						if (chunkLoadQueue.Count == 0)
+						{
+							i = chunkLoadingBatchSize;
+						}
+					}
 
-    private void UnloadChunk(Vector2Int chunkCoord)
-    {
-        if (loadedChunks.ContainsKey(chunkCoord))
-        {
-            // Deactivate the chunk instead of destroying it
-            loadedChunks[chunkCoord].DeactivateChunk();
-        }
-    }
+				}
+				chunkProcessTimer = 0f;  // Reset timer
+			}
+
+			yield return null;  // Return control until the next frame
+		}
+	}
+
+	// Helper to get chunk coordinates from a world position
+	private void UpdatePlayerChunkCoordinates()
+	{
+		Vector3 pt = playerTransform.position;
+		playerChunkPos.x = Mathf.RoundToInt(pt.x / chunkSize.x);
+		playerChunkPos.y = Mathf.RoundToInt(pt.z / chunkSize.y);
+	}
 
 
-    // Optional: Asynchronous or coroutine to handle chunk loading in the background (for large worlds)
-    private void ProcessChunkLoadQueue()
-    {
-        // Example of processing queued chunks over time
-        while (chunkLoadQueue.Count > 0)
-        {
-            Chunk chunkToLoad = chunkLoadQueue.Dequeue();
-            chunkToLoad.LoadChunk();
-        }
-    }
+	// Function to load/unload chunks around the player
+	private void ScanChunks()
+	{
+		// Update player's current chunk position
+		UpdatePlayerChunkCoordinates();
+
+		HashSet<Vector2Int> loadedChunkPool = new HashSet<Vector2Int>(loadedChunks);
+		// Iterate over the area around the player and load chunks within view distance
+		for (int x = -viewDistance; x <= viewDistance; x++)
+		{
+			for (int y = -viewDistance; y <= viewDistance; y++)
+			{
+				Vector2Int chunkCoord = new Vector2Int(playerChunkPos.x + x, playerChunkPos.y + y);
+
+				loadedChunkPool.Add(chunkCoord);
+			}
+		}
+
+		foreach (var chunkCoord in loadedChunkPool)
+		{
+			bool isLoadedChunk = loadedChunks.Contains(chunkCoord);
+			if (Vector2Int.Distance(chunkCoord, playerChunkPos) < viewDistance)
+			{
+				if (!loadedChunks.Contains(chunkCoord))
+				{
+					QueueChunk(chunkCoord, true);
+				}
+			} 
+			else if (isLoadedChunk)
+			{
+				QueueChunk(chunkCoord, false);
+			}
+		}
+	
+	}
+
+	private void QueueChunk(Vector2Int chunk, bool load)
+	{
+
+		if (chunks.ContainsKey(chunk))
+		{
+			if (chunks[chunk].load == load)
+			{
+				return;
+			} 
+			else
+			{
+				chunks[chunk].load = load;
+			}
+		}
+	
+		if (!chunkLoadQueue.Contains(chunk))
+		{
+			chunkLoadQueue.Enqueue(chunk);
+		}
+
+	}
+
+	private void ProcessChunkLoadQueue()
+	{
+		Vector2Int chunkCoord = chunkLoadQueue.Dequeue();
+		if (!chunks.ContainsKey(chunkCoord))
+		{
+			chunk_count++;
+			print("Creating new chunk with ID: " + chunk_count);
+			Chunk newChunk = new Chunk(chunkCoord, chunkSize, transform, chunk_count);
+			chunks.Add(chunkCoord, newChunk);
+		}
+		Chunk c = chunks[chunkCoord];
+		if (c.load == true)
+		{
+			c.LoadChunk();
+			loadedChunks.Add(chunkCoord);
+		} else
+		{
+			c.UnloadChunk();
+			loadedChunks.Remove(chunkCoord);
+		}
+	}
 }

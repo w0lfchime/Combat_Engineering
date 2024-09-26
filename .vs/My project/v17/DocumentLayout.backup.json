@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\jayca\\My project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\world\\testworldgen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\world\\testworldgen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\world\\chunkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\world\\chunkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\world\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,7 +18,26 @@
       "DocumentGroups": [
         {
           "DockedWidth": 516,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChunkManager.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\ChunkManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\World\\ChunkManager.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\ChunkManager.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\World\\ChunkManager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T21:11:17.45Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 516,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
@@ -28,21 +47,9 @@
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\World\\Chunk.cs",
               "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\Chunk.cs",
               "RelativeToolTip": "Assets\\Project\\Scripts\\World\\Chunk.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T03:01:53.985Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TestWorldGen.cs",
-              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\TestWorldGen.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\World\\TestWorldGen.cs",
-              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\TestWorldGen.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\World\\TestWorldGen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T00:42:50.678Z",
+              "WhenOpened": "2024-09-23T03:01:53.985Z",
               "EditorCaption": ""
             }
           ]

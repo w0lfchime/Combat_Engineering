@@ -579,7 +579,7 @@ PrefabInstance:
       addedObject: {fileID: 1770399792396473272}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7b7ea252bb148c94fb5d65aca5de219e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3532303369758922823}
+      addedObject: {fileID: 9183406289429495399}
   m_SourcePrefab: {fileID: 100100000, guid: 7b7ea252bb148c94fb5d65aca5de219e, type: 3}
 --- !u!1 &665527240622161224 stripped
 GameObject:
@@ -636,7 +636,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &3532303369758922823
+--- !u!114 &9183406289429495399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 665527240622161224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ce5ff46d4d9e844ea7b55b6be499a7e, type: 3}
+  m_Script: {fileID: 11500000, guid: deee83e29b7ff7b42ab312e45d3b3b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseMoveForce: 3
@@ -670,14 +670,7 @@ MonoBehaviour:
   bonusGravity: 2
   rotationSpeed: 10
   animator: {fileID: 0}
-  upperBodyBone: {fileID: 3100783064588245056}
-  equippedItem: {fileID: 0}
-  itemTransform: {fileID: 0}
-  fireDelay: 0.07
-  gunFiringEffect: {fileID: 0}
-  bulletPrefab: {fileID: 421744515870184307, guid: cff7977b736052c4f95479fcadfb6b4d, type: 3}
-  bulletSpeed: 100
-  bulletLifeTime: 2
+  upperBodyBone: {fileID: 0}
   mainCamera: {fileID: 0}
   jumpKey: 32
   sprintKey: 304
@@ -690,11 +683,6 @@ MonoBehaviour:
 --- !u!4 &1593858498469025576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1433131434114537265, guid: 7b7ea252bb148c94fb5d65aca5de219e, type: 3}
-  m_PrefabInstance: {fileID: 431506285367394329}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &3100783064588245056 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3383669428380522585, guid: 7b7ea252bb148c94fb5d65aca5de219e, type: 3}
   m_PrefabInstance: {fileID: 431506285367394329}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2181922776013789229

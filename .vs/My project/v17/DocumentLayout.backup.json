@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\jayca\\My project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\world\\chunkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\world\\chunkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\controllers\\misc\\playercontroller2_old.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\controllers\\misc\\playercontroller2_old.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\world\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\world\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jayca\\my project\\assets\\project\\scripts\\player\\weapons\\guns\\playergun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\player\\weapons\\guns\\playergun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\player\\playerctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\player\\playerctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\world\\chunkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\world\\chunkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jayca\\My project\\assets\\project\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,15 +39,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PlayerController2_old.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\Misc\\PlayerController2_old.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Controllers\\Misc\\PlayerController2_old.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Controllers\\Misc\\PlayerController2_old.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Controllers\\Misc\\PlayerController2_old.cs",
+              "ViewState": "AgIAACABAAAAAAAAAAAwwFUBAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T19:29:09.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerGun.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Player\\Weapons\\Guns\\PlayerGun.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Player\\Weapons\\Guns\\PlayerGun.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Player\\Weapons\\Guns\\PlayerGun.cs*",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Player\\Weapons\\Guns\\PlayerGun.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T20:38:10.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayerCTRL.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Player\\PlayerCTRL.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Player\\PlayerCTRL.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Player\\PlayerCTRL.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Player\\PlayerCTRL.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwG4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T19:28:52.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Player\\PlayerMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T19:28:01.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ChunkManager.cs",
               "DocumentMoniker": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\ChunkManager.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\World\\ChunkManager.cs",
               "ToolTip": "C:\\Users\\jayca\\My project\\Assets\\Project\\Scripts\\World\\ChunkManager.cs",
               "RelativeToolTip": "Assets\\Project\\Scripts\\World\\ChunkManager.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T21:11:17.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T21:11:17.45Z"
             }
           ]
         },

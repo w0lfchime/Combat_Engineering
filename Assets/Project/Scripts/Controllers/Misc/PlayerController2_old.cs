@@ -182,14 +182,15 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 	{
 		float upperBodyAnimatorTargetWeight = 0f;
 
-		//if (isAiming)
-		//{
-		//	upperBodyAnimatorTargetWeight = 1f;
-		//}
+		if (isFiring)
+		{
+			upperBodyAnimatorTargetWeight = .5f;
+		}
 
 		upperBodyAnimatorWeight = Mathf.Lerp(upperBodyAnimatorWeight, upperBodyAnimatorTargetWeight, Time.deltaTime * 3.0f);
 
-		animator.SetLayerWeight(1, upperBodyAnimatorWeight);
+		//HACK: bypassing lerp by using target
+		animator.SetLayerWeight(1, upperBodyAnimatorTargetWeight);
 
         float targetAnimSpeedFactor = Mathf.Clamp01(playerCurrentSpeed / approxMaxSpeed);
 
@@ -201,6 +202,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 
 		animator.SetBool("Grounded", isGrounded);
 		animator.SetBool("Aiming", isAiming);
+		animator.SetBool("Firing", isFiring);
 
 
 		if (isAiming)
@@ -327,7 +329,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer
 		{
 			playerDrag = Mathf.Lerp(playerDrag, groundDrag, Time.deltaTime * 1.0f);
 
-			moveForce = Mathf.Lerp(moveForce, targetMoveForce, Time.deltaTime * 3.0f);
+			moveForce = Mathf.Lerp(moveForce, targetMoveForce, Time.deltaTime * 10.0f);
 
             if (playerCurrentSpeed > beginReductionSpeed)
             {
